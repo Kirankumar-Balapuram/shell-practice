@@ -23,7 +23,7 @@ do
    dnf list installed $package &>> $LOGS_FILE
    if [ $? -ne 0 ]; then
        echo "$package not installed, installing now"
-       dnf install $package -y &>>$LOGS_FILE
+       dnf install $package -y &>> $LOGS_FILE
     else
        echo -e "$package already installed, $Y skipping"
     fi      
