@@ -47,3 +47,11 @@ log "Backup started"
 log "Source Directory: $SOURCE_DIR"
 log "Destination Directory: $DEST_DIR"
 log "Days: $DAYS"
+
+if [ -z $FILES ]; then
+    log "No files to archieve .... $Y skipping $N"
+else
+   log "Files found to archieve: $FILEs"
+   TIMESTANP=$(date +%F-%H-%M-%S)  
+   ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz"
+fi
